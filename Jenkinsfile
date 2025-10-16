@@ -1,11 +1,14 @@
+
 pipeline {
     agent any
 
-    tools {
-        nodejs "Node18"
-    }
-
     stages {
+        stage('Clone') {
+            steps {
+                git branch: 'main', url: 'https://github.com/hermogene2001/my-web-app.git'
+            }
+        }
+
         stage('Verify Tools') {
             steps {
                 sh 'node -v'
@@ -13,28 +16,22 @@ pipeline {
             }
         }
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/hermogene2001/my-web-app.git'
-            }
-        }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
         stage('Build') {
             steps {
-                echo 'Build complete (if any build process is needed).'
+                echo "Building the project..."
+                sh 'ls -la'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running basic test...'
-                sh 'node -v'
+                echo "Running tests..."
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo "Deploying..."
             }
         }
     }
