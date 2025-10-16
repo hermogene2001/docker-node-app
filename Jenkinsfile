@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'dockerhub_hermogene2001/my-web-app'
+        DOCKER_IMAGE = 'hermogene2001/my-web-app'
         DOCKER_CREDENTIALS_ID = '0e20b0a0-6d0f-4ae5-8d67-73e4effdab5f'
     }
 
@@ -54,15 +54,9 @@ pipeline {
                 '''
             }
         }
-        stage('Push to Docker Hub') {
-            steps {
-                script {
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
-                    dockerImage.push('latest')
-            }
-        }
-    }
-}
+        
+    
+
 
     }
 }
