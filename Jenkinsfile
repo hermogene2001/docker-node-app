@@ -4,28 +4,30 @@ pipeline {
     tools {
         nodejs "Node18"
     }
- 
-    stages {
-        stage('Verify Tools'){
-        steps{
-            sh 'npm -v'
-            sh 'node -v'
 
-        }
-        stage('Install Dependencies'){
-            steps{
-                bat:'npm install'
+    stages {
+        stage('Verify Tools') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
+
         stage('Clone') {
             steps {
                 git 'https://github.com/hermogene2001/my-web-app.git'
             }
         }
 
-        stage('Build') {
+        stage('Install Dependencies') {
             steps {
                 sh 'npm install'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Build complete (if any build process is needed).'
             }
         }
 
@@ -36,5 +38,4 @@ pipeline {
             }
         }
     }
-}
 }
