@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', url: 'https://github.com/hermogene2001/my-web-app.git'
+                git branch: 'main', url: 'https://github.com/hermogene2001/docker-node-app.git'
             }
         }
 
