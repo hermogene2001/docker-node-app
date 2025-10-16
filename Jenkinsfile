@@ -9,7 +9,7 @@ pipeline {
         stage('Verify Tools'){
         steps{
             sh 'npm -v'
-            sh 'node -n'
+            sh 'node -v'
 
         }
         stage('Install Dependencies'){
