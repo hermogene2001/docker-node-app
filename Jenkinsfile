@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/yourusername/docker-node-app.git'
+                git 'https://github.com/hermogene2001/my-web-app.git'
             }
         }
 
