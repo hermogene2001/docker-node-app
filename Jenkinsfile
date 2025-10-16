@@ -24,7 +24,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building the project..."
-                sh 'ls -la'  // You can replace this with your actual build command (e.g., `npm install`, `npm run build`, etc.)
+                sh 'ls -la'  // Replace with `npm install` or your actual build command
             }
         }
 
