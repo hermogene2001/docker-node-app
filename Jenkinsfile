@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'dockerhub_hermogene2001/my-web-app'
-        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
+        DOCKER_CREDENTIALS_ID = '0e20b0a0-6d0f-4ae5-8d67-73e4effdab5f'
     }
 
     stages {
